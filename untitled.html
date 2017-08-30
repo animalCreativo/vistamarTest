@@ -1,0 +1,85 @@
+var config = {
+    apiKey: "AIzaSyBiLM01CIZdzyQsXeldj38WhGU77g0oa9A",
+    authDomain: "vistamar-f5112.firebaseapp.com",
+    databaseURL: "https://vistamar-f5112.firebaseio.com",
+    projectId: "vistamar-f5112",
+    storageBucket: "vistamar-f5112.appspot.com",
+    messagingSenderId: "39724864320"
+  };
+  firebase.initializeApp(config);
+
+  var award = $('#award');
+  var info= $('#info');
+  var range= $('#range');
+  var varieties= $('#varieties');
+  var vintage= $('#vintage');
+
+  var dbRef = firebase.database().ref().child('vinos/1');
+ 
+  dbRef.once('value', snap => award.text("AWARD: " + snap.val().AWARD) );
+  dbRef.once('value', snap => info.text("INFO: " + snap.val().INFO) );
+  dbRef.once('value', snap => range.text("RANGE: " + snap.val().RANGE) );
+  dbRef.once('value', snap => varieties.text("VARIETIES: " + snap.val().VARIETIES) );
+  dbRef.once('value', snap => vintage.text("VINTAGE: " + snap.val().VINTAGE) );
+
+  var t_award = $('#t_award');
+  var t_info= $('#t_info');
+  var t_range= $('#t_range');
+  var t_varieties= $('#t_varieties');
+  var t_vintage= $('#t_vintage');
+
+  // QUERY PARA DESPLAGAR TODOS LOS DATOS DE VINOS
+  var dbRef2 = firebase.database().ref().child('vinos');
+ /* dbRef2.once("value", function(snapshot) {
+    snapshot.forEach(function(child) {
+      console.log(child.key);
+      console.log("  AWARD: " +child.val().AWARD);
+      console.log("  INFO: " +child.val().INFO);
+      console.log("  RANGE: " +child.val().RANGE);
+      console.log("  VARIETIES: " +child.val().VARIETIES);
+      console.log("  VINTAGE: " +child.val().VINTAGE);
+    });
+  });
+*/
+// QUERY PARA PEDIR POR UN FILTRO EN ESPECIFICO
+ /* console.log("AWARD : Silver");
+  dbRef2.orderByChild("AWARD").equalTo("Silver").on("child_added", function(snapshot) {
+      console.log("Nueva QUERY :"+snapshot.key);
+      console.log("  AWARD: " +snapshot.val().AWARD);
+      console.log("  INFO: " +snapshot.val().INFO);
+      console.log("  RANGE: " +snapshot.val().RANGE);
+      console.log("  VARIETIES: " +snapshot.val().VARIETIES);
+      console.log("  VINTAGE: " +snapshot.val().VINTAGE);
+  });*/
+
+    // el metodo on es una escucha siempre en cambio once lo hace una vez
+
+  console.log("VINTAGE : 2010");
+  const q2 = dbRef2.orderByChild("RANGE").equalTo("Gran Reserva")
+
+  q2.once("value", function(snapshot) {
+    snapshot.forEach(function(child) {
+      if ((child.val().VINTAGE == "2010") && (child.val().VARIETIES == "Cabernet Sauvignon / Syrah") ) {
+        console.log(child.key);
+        console.log("  AWARD: " +child.val().AWARD);
+        console.log("  INFO: " +child.val().INFO);
+        console.log("  RANGE: " +child.val().RANGE);
+        console.log("  VARIETIES: " +child.val().VARIETIES);
+        console.log("  VINTAGE: " +child.val().VINTAGE);
+
+      }
+      
+    });
+  });
+
+  q2.once("value", function(snapshot) {
+    var arrayVintage =[];
+    snapshot.forEach(function(child) {
+      if ((child.val().VINTAGE == "2010") ) {
+      console.log("  VINTAGE: " +child.val().VINTAGE);
+
+      }
+      
+    });
+  });
+

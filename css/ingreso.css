@@ -1,0 +1,196 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body {
+    background-color: #198599;
+    font-family: "Open Sans",sans-serif;
+    margin: 0 auto;
+	color: #FFFFFF;
+}
+
+.contenedor {
+    background-image: url("../img/intro-bkg.png");
+    background-position: left top;
+    background-repeat: no-repeat;
+	background-size: cover;
+    height: 100vh;
+    width: 100%;
+}
+
+#soporte {
+    height: auto;
+    overflow: hidden;
+    padding-bottom: 40px;
+}
+
+.importante {
+    border-radius: 10px;
+    height: 380px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 300px;
+    width: 562px;
+}
+
+#logo-sp {
+    margin-bottom: 32px;
+    padding-top: 30px;
+    text-align: center;
+}
+.parrafos {
+	text-align:center;
+}
+.botones {
+	width:344px;
+	overflow:hidden;
+	text-align:center;
+	margin-top:25px;
+	margin-bottom:20px;
+	margin-left:auto;
+	margin-right:auto;
+}
+.btn-si:hover { 
+	background-color:#198599;
+}
+.btn-si {
+	width:160px;
+	height:48px;
+	border-radius:5px;
+	background-color:#33312c;
+	float:left;
+	line-height:48px;
+	color:#FFFFFF;
+	overflow:hidden;
+	font-weight:700;
+}
+#secreto {
+	font-size:24px;
+	font-weight:400;
+}
+#bajada {
+	font-weight:100;
+}
+.m-right {
+	margin-right: 15px;
+}
+.popup1 {
+	text-align: center;
+}
+.popup1 h2 h5 {
+	color: #0b859a;
+}
+.simple-popup-content {
+	text-align: center !important;
+	color: #0b859a !important;
+}
+
+.simple-popup-content h1 {
+	font-size: 30px;
+	text-transform: uppercase;
+}
+
+
+@media only screen and (max-width: 1024px) {
+	.importante {
+    border-radius: 10px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 300px;
+    width: 80%;
+}
+	.botones {
+		width: 100%;
+	}
+	.btn-si {
+		width: 45%;
+		height: 80px;
+		line-height: 80px;
+		font-size: 28px;
+	}
+	#secreto {
+		font-size: 40px;
+		font-weight: 700;
+	}
+	.logo-img {
+		width: 100%;
+	}
+	.m-right {
+	margin-right: 5%;
+}
+	.parrafos span {
+		font-size: 24px;
+	}
+}
+
+@media (max-width: 1024px) and (orientation: landscape) {
+	.importante {
+		margin-top: 100px !important;
+	}
+	.logo-img {
+		max-width: 70% !important;
+	}
+}
+
+@media only screen and (max-width: 600px) {
+	body {
+	margin:0 auto;
+	background-color:#337079;
+	font-family: 'Open Sans', sans-serif;
+}
+
+	.btn-si {
+	float:none;
+		margin: auto;
+		margin-top: 15px;
+}
+	.m-right {
+	margin-right: auto;
+		margin-left: auto;
+}
+	
+.importante {
+	width:100%;
+	height:100% !important;
+	border-radius: 0px;
+	margin-top: 80px;
+	padding: 0 15px;
+	display: block;
+	box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+}
+
+.botones {
+	width:100%;
+}
+	.btn-si {
+		width: 80%;
+		height: 50px;
+		line-height: 50px;
+		font-size: 24px;
+	}
+	a.btn-si {
+		width: 80%;
+		height: 50px;
+		line-height: 50px;
+		font-size: 24px;
+	}
+#btn-si {
+	width:80%;
+	float:none;
+	margin-bottom:15px;
+	margin-left:auto;
+	margin-right:auto;
+}
+#btn-no {
+	width:80%;
+	float:none;
+	margin-left:auto;
+	margin-right:auto;
+}
+#secreto {
+	font-size:28px;
+}
+	
+}

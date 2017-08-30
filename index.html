@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> test</title>
+</head>
+<body>
+
+<h1>hola firebase por animal</h1>
+
+<h3> Consulta por id</h3>
+
+<p id="award"> name Vacio</p>
+<p id="info"> edad Vacio</p>
+<p id="range"> edad Vacio</p>
+<p id="varieties"> edad Vacio</p>
+<p id="vintage"> edad Vacio</p>
+
+</body>
+
+ <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBiLM01CIZdzyQsXeldj38WhGU77g0oa9A",
+    authDomain: "vistamar-f5112.firebaseapp.com",
+    databaseURL: "https://vistamar-f5112.firebaseio.com",
+    projectId: "vistamar-f5112",
+    storageBucket: "vistamar-f5112.appspot.com",
+    messagingSenderId: "39724864320"
+  };
+  firebase.initializeApp(config);
+
+  var award = $('#award');
+  var info= $('#info');
+  var range= $('#range');
+  var varieties= $('#varieties');
+  var vintage= $('#vintage');
+
+  const db = firebase.database().ref();
+  const cursos = db.child('curso/js');
+  const suscritos = db.child('suscritos/js');
+
+  cursos.once('value',snap => console.log(snap.val()));
+
+
+ 
+
+
+
+</script>
+
+</html>
